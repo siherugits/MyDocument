@@ -1,0 +1,8 @@
+backup MySQL
+-- ceck dulu path nya
+bash
+mysqldump -u root -p ci4_admin | Out-File -Encoding utf8 file_backup.sql
+
+bash
+mysql -u root -p --binary-mode ci4_admin
+source file_backup.sql
